@@ -1,0 +1,246 @@
+//colors settings
+
+$redPrimary: #D94646;
+$redSecondary: #FCDFDF;
+
+$orangePrimary: #F38F37;
+$orangeSecondary: #EDF6F8;
+
+$bluePrimary: #1F2A56;
+$blueSecondary: #EDF6F8; // check this Color
+
+
+$BrownPrimary: #874825;
+$BrownSecondary: #F6F1EB;
+
+$dark-grey : #1d1e1e;
+
+//end color settings
+
+
+//responsive settings
+$screen-mobile: 320px;
+
+$screen-wide-mobile: 480px;
+
+$screen-tablet: 768px;
+
+$screen-desktop: 960px;
+
+$screen-large-desktop: 1220px;
+
+$screen-xl-min: 1200px;
+
+@mixin smMobile {
+  @media (min-width: #{$screen-mobile}) {
+    @content;
+  }
+}
+
+@mixin mdMobile {
+  @media (min-width: #{$screen-wide-mobile}) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (min-width: #{$screen-tablet}) {
+    @content;
+  }
+}
+
+@mixin laptop {
+  @media (min-width: #{$screen-desktop}) {
+    @content;
+  }
+}
+
+
+@mixin laptopLarge {
+  @media (min-width: #{$screen-large-desktop}) {
+    @content;
+  }
+}
+
+
+@mixin rwd($screen) {
+  @media (min-width: $screen+'px') {
+    @content;
+  }
+}
+
+//end responsive settings
+
+#__next {
+  height: 100%
+}
+
+.header-content {
+  background-image: url("../images/header.svg");
+  background-color: #fff;
+  position: fixed;
+  height: 30%;
+  width: 100%;
+  padding: 22px;
+  object-fit: contain;
+  border-style: solid;
+  border-width: 0.9px;
+  border-image-source: linear-gradient(to bottom, #f6f1eb 10%, #ead7b6);
+  box-shadow: 0px 0px 9px 3px rgba(41, 41, 41, .25);
+  border-image-slice: 1;
+  transition: height 500ms 0ms;
+  z-index: 999;
+}
+
+.header-content-small {
+  height: 10%;
+  padding-top: 10px;
+  z-index: 999;
+}
+
+.signed-off-header-content-small {
+  height: 10%;
+  padding-top: 0px;
+  z-index: 999;
+}
+
+.logo {
+  width: 200px;
+
+}
+
+
+.grayText {
+  font-family: Montserrat;
+  font-size: 12px;
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.15;
+  letter-spacing: normal;
+  color: #989898;
+}
+
+
+.bigText {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 32px;
+  font-weight: 600;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.5;
+  letter-spacing: normal;
+  color: $bluePrimary;
+}
+
+.smallTitle {
+  opacity: 0.9;
+
+  font-family: Montserrat;
+  font-size: 13px;
+  font-weight: 600;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.67;
+  letter-spacing: normal;
+  color: $dark-grey;
+}
+
+.smallText {
+  opacity: 0.9;
+
+  font-family: SourceSansPro;
+  font-size: 12px;
+  font-weight: 600;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.43;
+  letter-spacing: normal;
+  color: $dark-grey;
+}
+
+
+
+
+
+
+
+.top-menu {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  align-items: center;
+
+}
+
+.leftItemsMenu {
+  display: flex;
+  align-items: center;
+  justify-content: space-between
+}
+
+.rightItemsMenu {
+  display: flex;
+  align-items: center;
+  justify-content: space-between
+}
+
+.menuBtn {
+  border-radius: 22px;
+  margin-right: 20px;
+  border: solid 1px #cfb992;
+  background-color: #f6f1eb;
+  padding: 7px 15px 7px 15px;
+  color: #000 !important;
+
+  a {
+    color: #000 !important;
+  }
+}
+
+
+.userIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #cfb992;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.flexRow {
+  display: flex;
+  flex-direction: row;
+}
+
+.flexColumn {
+  display: flex;
+  flex-direction: column;
+}
+
+
+
+
+.floatCard {
+  position: absolute;
+  max-height: 35%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  background-color: white;
+  display: flex;
+  top: 120px;
+  z-index: 12;
+  left: 10%;
+  width: 80%;
+  justify-content: space-between;
+  padding: 18px 50px 18px 50px;
+  border-radius: 5px;
+}
+
+.floatCardContent {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+}

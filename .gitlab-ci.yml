@@ -1,0 +1,34 @@
+image: node:10.15.3
+pages:
+  cache:
+    paths:
+      - node_modules/
+  before_script:
+    - apt-get update -qq && apt-get install -y -qq sshpass
+
+  stage: deploy
+  script:
+    #- yarn
+    #- yarn build
+    #- rm -r node_modules
+    #- cd build/
+    # Setup SSH deploy keys
+    - 'which ssh-agent || ( apt-get install -qq openssh-client )'
+    - eval $(ssh-agent -s)
+    - ls
+    - sshpass -V
+    - export SSHPASS=$PASSWORD
+    #-  sshpass -e scp -o  stricthostkeychecking=no -r build/*  $(pwd) root@51.75.20.80:/var/www/html
+    - ssh-add <(echo "$SSH_PRIVATE_KEY")
+    #- sshpass -p $(pwd) scp . ubuntu@3.9.15.24:/var/www/html 
+    - scp -o StrictHostKeyChecking=no -r [!.]*  ubuntu@3.9.15.24:/home/ubuntu/OmyNote/front-end-react/
+    #- scp -o StrictHostKeyChecking=no -r $(pwd)  ubuntu@3.9.15.24:/home/ubuntu/OmyNote/
+    #- rsync -av -e ssh --exclude='.git/*' -o StrictHostKeyChecking=no -r $(pwd)  ubuntu@3.9.15.24:/home/ubuntu/OmyNote/
+    - ssh -o StrictHostKeyChecking=no ubuntu@3.9.15.24 "chmod o-w -R /home/ubuntu/OmyNote/front-end-react && cd /home/ubuntu/OmyNote/front-end-react && yarn && yarn install && yarn build && pm2 restart nextjs && exit"
+
+
+  artifacts:
+    paths:
+      - public # mandatory, other folder won't work
+  only:
+    - master # or dev, the branch you want to publish

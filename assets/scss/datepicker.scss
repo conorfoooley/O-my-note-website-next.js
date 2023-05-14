@@ -1,0 +1,59 @@
+.react-datepicker-popper[data-placement^=bottom] {
+    inset: -20px auto auto 0px!important;
+    .react-datepicker__triangle::before {
+        left: -50px!important;
+    }
+
+    .react-datepicker__triangle::after {
+        left: -210px!important;
+    }
+    .react-datepicker__month-text .react-datepicker__month--selected::before{
+        background-color:'#CFB992'!important;
+    }
+
+    .react-datepicker__month-text--keyboard-selected {
+        background-color: #cfb992!important;
+    }
+}
+.react-datepicker-wrapper{
+    width: auto!important;
+    margin-right: 0.5rem;
+}
+.react-datepicker__input-container{
+    Input[type=text] {
+        border: 1px solid #cfb992 !important;
+        height: 32px;
+    }
+}
+// .ant-select .ant-select-multiple .ant-select-show-search{
+
+// }
+.ant-select-multiple{
+    .ant-select-selector{
+        border: 0.5px solid #cfb992!important;
+        border-radius: 6px!important;
+    }
+}
+.ant-select-item-option-state{
+    .anticon{
+        color: #cfb992!important;
+    }
+}
+.ant-select.ant-select-single.ant-select-show-arrow.ant-select-show-search{
+    .ant-select-selector{
+        border: 0.5px solid #cfb992!important;
+        border-radius: 6px!important;
+    }
+    .ant-select-arrow{
+        margin-top: -18px;
+    }
+}
+.products-filter{
+    margin-bottom: 25px;
+    .ant-select-arrow{
+        margin-top: -6px!important;
+    }
+}
+.ant-select-multiple .ant-select-selection-item-remove > .anticon {
+    vertical-align: 0em;
+}

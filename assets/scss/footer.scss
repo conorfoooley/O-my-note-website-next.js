@@ -1,0 +1,77 @@
+//colors settings
+
+$redPrimary: #D94646;
+$redSecondary: #FCDFDF;
+
+$orangePrimary: #F38F37;
+$orangeSecondary: #EDF6F8;
+
+$bluePrimary: #1F2A56;
+$blueSecondary: #EDF6F8; // check this Color
+
+
+$BrownPrimary: #874825;
+$BrownSecondary: #F6F1EB;
+
+$dark-grey : #1d1e1e;
+
+//end color settings
+
+
+//responsive settings
+$screen-mobile: 320px;
+
+$screen-wide-mobile: 480px;
+
+$screen-tablet: 768px;
+
+$screen-desktop: 960px;
+
+$screen-large-desktop: 1220px;
+
+$screen-xl-min: 1200px;
+
+@mixin smMobile {
+  @media (min-width: #{$screen-mobile}) {
+    @content;
+  }
+}
+
+@mixin mdMobile {
+  @media (min-width: #{$screen-wide-mobile}) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (min-width: #{$screen-tablet}) {
+    @content;
+  }
+}
+
+@mixin laptop {
+  @media (min-width: #{$screen-desktop}) {
+    @content;
+  }
+}
+
+
+@mixin laptopLarge {
+  @media (min-width: #{$screen-large-desktop}) {
+    @content;
+  }
+}
+
+
+@mixin rwd($screen) {
+  @media (min-width: $screen+'px') {
+    @content;
+  }
+}
+
+.footer-container {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
